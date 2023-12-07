@@ -61,6 +61,24 @@ def get_channel_id(access_token, team_id):
         print('Failed to retrieve channels.')
         return None
 
+# Send message to channel
+def send_message(access_token, team_id, channel_id):
+    url = f'https://graph.microsoft.com/v1.0/teams/{team_id}/channels/{channel_id}/messages'
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Content-Type': 'application/json'
+    }
+    data = {
+        'body': {
+            'content': message_content
+        }
+    }
+    response = requests.post(url, headers=headers, json=data)
+    if response.status_code == 201:
+        print('Message sent successfully!')
+    else:
+        print('Failed to send message.')
+
 # Main function
 def main():
     access_token = get_access_token()
