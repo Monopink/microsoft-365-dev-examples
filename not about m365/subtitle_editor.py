@@ -46,7 +46,11 @@ def convert_milliseconds_to_time(milliseconds):
     return "{:02d}:{:02d}:{:02d},{:03d}".format(hours, minutes, seconds, milliseconds)
 
 
-# 使用示例
-subtitle_file_path = "your_subtitle_file.srt"  # 替换为您的字幕文件路径
-time_interval_ms = 10  # 替换为所需的时间间隔，以毫秒为单位
+# Usage example
+
+# Replace with your subtitle file path
+subtitle_file_path = "your_subtitle_file.srt"
+# Replace with the desired time interval in milliseconds
+time_interval_ms = 10
+
 adjust_subtitle_timing(subtitle_file_path, time_interval_ms)
